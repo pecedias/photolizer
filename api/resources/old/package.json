@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-docs-samples-vision",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Google Inc.",
+  "repository": "googleapis/nodejs-vision",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "repo-tools test run --cmd ava -- -T 1m --verbose system-test/*.test.js"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^1.5.2",
+    "@google-cloud/vision": "^0.17.0",
+    "async": "2.5.0",
+    "natural": "0.5.4",
+    "redis": "2.8.0",
+    "yargs": "10.0.3"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "2.2.3",
+    "ava": "0.23.0",
+    "uuid": "3.1.0"
+  },
+  "optionalDependencies": {
+    "canvas": "^1.6.10"
+  }
+}
