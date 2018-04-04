@@ -35,6 +35,9 @@ $id = $_GET['id'];
 
     <title>PhotoLizer</title>
 
+    <!-- Fontawesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
     <!-- Bootstrap -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
@@ -56,8 +59,8 @@ $id = $_GET['id'];
           <!-- HEADER -->
           <div class="navbar-header">
 
-            <a href="index.html" class="navbar-brand">
-              <span class="img-logo">PHOTOLIZER <span class="span-logo glyphicon glyphicon-eye-open"</span></span>
+            <a href="index.php" class="navbar-brand">
+              <span class="img-logo">PHOTOLIZER<span class="span-logo glyphicon glyphicon-eye-open"</span></span>
             </a>
 
           </div>
@@ -106,7 +109,7 @@ $id = $_GET['id'];
         <div class="row">
 
           <div class="col-md-2">
-            <h2 align="center">Rosto <span class="glyphicon glyphicon-user"</span></h2>
+            <h2 align="center">Rosto <i class="far fa-smile"></i></h2>
               <ul class="nav borda-esquerda borda-direita" align="center">
                 <?php
                   if($faceC->rowCount() > 0) {
@@ -114,8 +117,8 @@ $id = $_GET['id'];
                       echo "<li><a href=\"#\">".$face['face_name']."</a></li>";
                     }
                   } else {
-                    echo "<ul class=\"nav borda-esquerda borda-direita\" align=\"center\">
-                            <li><a href=\"#\"><span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                    echo "<ul class=\"nav\" align=\"center\">
+                            <li><a href=\"#\">Nada relacionado a rosto. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
                           </ul>";
                   }
                 ?>
@@ -123,7 +126,7 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-            <h2 align="center">Logos <span class="glyphicon glyphicon-picture"</span></h2>
+            <h2 align="center">Logos <i class="far fa-lightbulb"></i></h2>
               <ul class="nav borda-esquerda borda-direita" align="center">
                 <?php
                   if($logoC->rowCount() > 0) {
@@ -131,8 +134,8 @@ $id = $_GET['id'];
                       echo "<li><a href=\"#\">".$logo['logo']."</a></li>";
                     }
                   } else {
-                    echo "<ul class=\"nav borda-esquerda borda-direita\" align=\"center\">
-                            <li><a href=\"#\"><span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                    echo "<ul class=\"nav\" align=\"center\">
+                            <li><a href=\"#\">Nada relacionado a logos. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
                           </ul>";
                   }
                 ?>
@@ -140,7 +143,7 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-            <h2 align="center">Cores <span class="glyphicon glyphicon-tint"</span></h2>
+            <h2 align="center">Cores <i class="fa fa-tint"></i></h2>
               <ul class="nav borda-esquerda borda-direita nav-custom" align="center">
                 <?php
                   if($propertC->rowCount() > 0) {
@@ -148,8 +151,8 @@ $id = $_GET['id'];
                       echo "<li class=\"espaco\" data-toggle=\"tooltip\" data-placement=\"right\" title=".$propert['cod_color']."><a style=\"color: " .$propert['cod_color']."; font-size: 30px;\" href=\"#\">&#9632;&#9632;&#9632;&#9632;&#9632;</a></li>";
                     }
                   } else {
-                    echo "<ul class=\"nav borda-esquerda borda-direita\" align=\"center\">
-                            <li><a href=\"#\"><span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                    echo "<ul class=\"nav\" align=\"center\">
+                            <li><a href=\"#\">Nada relacionado a cores. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
                           </ul>";
                   }
                 ?>
@@ -157,7 +160,7 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-            <h2 align="center">Texto <span class="glyphicon glyphicon-font"</span></h2>
+            <h2 align="center">Texto <i class="fas fa-font"></i></h2>
               <ul class="nav borda-esquerda borda-direita" align="center">
                 <?php
                   if($textC->rowCount() > 0) {
@@ -165,8 +168,8 @@ $id = $_GET['id'];
                       echo "<li><a href=\"#\">".$text['text']."</a></li>";
                     }
                   } else {
-                    echo "<ul class=\"nav borda-esquerda borda-direita\" align=\"center\">
-                            <li><a href=\"#\"><span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                    echo "<ul class=\"nav\" align=\"center\">
+                            <li><a href=\"#\">Nada relacionado a texto. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
                           </ul>";
                   }
                 ?>
@@ -174,7 +177,7 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-            <h2 align="center">Turismo <span class="glyphicon glyphicon-globe"</span></h2>
+            <h2 align="center">Turismo <i class="fas fa-globe"></i></h2>
               <ul class="nav borda-esquerda borda-direita" align="center">
                 <?php
                   if($landmarkC->rowCount() > 0) {
@@ -182,8 +185,8 @@ $id = $_GET['id'];
                       echo "<li><a href=\"#\">".$landmark['landmark_name']."</a></li>";
                     }
                   } else {
-                    echo "<ul class=\"nav borda-esquerda borda-direita\" align=\"center\">
-                            <li><a href=\"#\"><span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                    echo "<ul class=\"nav\" align=\"center\">
+                            <li><a href=\"#\">Nada relacionado a turismo. </br> <span class=\"glyphicon glyphicon-remove\"</span></a></li>
                           </ul>";
                   }
                 ?>
@@ -191,7 +194,7 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-            <h2 align="center">Tags <span class="glyphicon glyphicon-tags"</span></h2>
+            <h2 align="center">Tags <i class="fas fa-tags"></i></h2>
               <ul class="nav borda-esquerda borda-direita" align="center">
                 <?php
                   if($tagC->rowCount() > 0) {
@@ -199,8 +202,8 @@ $id = $_GET['id'];
                       echo "<li><a href=\"#\">".$tag['label_name']."</a></li>";
                     }
                   } else {
-                    echo "<ul class=\"nav borda-esquerda borda-direita\" align=\"center\">
-                            <li><a href=\"#\"><span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                    echo "<ul class=\"nav\" align=\"center\">
+                            <li><a href=\"#\">Nada relacionado a tags. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
                           </ul>";
                   }
                 ?>

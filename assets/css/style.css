@@ -5,10 +5,9 @@
 */
 
 /* ========================= LAYOUT ========================= */
-
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 html, body {
 	height: 100%;
@@ -26,13 +25,14 @@ body {
 	padding-left: 10px;
 }
 
-.navbar-brand {
+.img-logo {
 	font-family: 'Anton', Arial, sans-serif;
-	font-size: 25px;
-	position: relative;
-	padding: 11px 0px 0px 0px;
-	top: 0px;
-	margin: 0px;
+	font-size: 30px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	padding-bottom: 4px;
 }
 
 .navbar span {
@@ -96,10 +96,10 @@ nav.navbar-bg {
 	border-radius: 5px 5px;
 }
 
-#elementos2 span {
+/* #elementos2 i.far {
 	font-size: 18px;
 	padding-left: 10px;
-}
+} */
 
 #elementos3 .container {
 	background: #FFFFFF;
@@ -111,7 +111,7 @@ nav.navbar-bg {
 }
 
 #elementos3 .no-image {
-	padding-left: 44px;
+	padding-left: 45px;
 }
 
 .borda-direita {
@@ -152,3 +152,30 @@ a {
 }
 
 /* ========================= MEDIA QUERIES ========================= */
+
+/* xs < 768px */
+@media screen and (max-width: 767px) {
+
+.img-logo {
+	font-size: 25px;
+	padding-top: 4px;
+}
+
+}
+
+/* sm ≥ 768px */
+@media screen and (min-width: 768px) {
+
+}
+
+/* md ≥ 992px */
+@media screen and (min-width: 992px) {
+
+
+}
+
+/* lg ≥ 1200px */
+@media screen and (min-width: 1200px) {
+
+
+}
