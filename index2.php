@@ -40,8 +40,8 @@ $id = $_GET['id'];
 
     <!-- Bootstrap -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
-    <link href="<?php echo "https://" . $_SERVER['HTTP_HOST']; ?>/assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/custom2.css" rel="stylesheet">
+    <link href="<?php echo "https://" . $_SERVER['HTTP_HOST']; ?>/assets/css/style2.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -73,10 +73,30 @@ $id = $_GET['id'];
       <div class="container">
         <div class="row">
 
-          <div class="col-md-12">
+         <div class="col-md-2">
+              <ul class="nav center" align="center">
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-8">
             <a href="#">
               <img src='upload/files_input/<?php echo $imageName;?>' class="img-responsive img-centro"/>
             </a>
+          </div>
+
+          <div class="col-md-2">
+              <ul class="nav center" align="center">
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+              </ul>
           </div>
 
         </div>

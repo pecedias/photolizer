@@ -60,10 +60,10 @@ if(isset($_POST["base"])){
           			  window.location = "'.$url.'"
      				 </script>';
 	    } else {
-	        echo "Desculpe, houve um erro ao tentar fazer upoad do arquivo.";
+	        echo "Desculpe, houve um erro ao tentar fazer upload do arquivo.";
 	    }
 	}
-   
+
 }else{
 
 ?>
@@ -71,11 +71,14 @@ if(isset($_POST["base"])){
 <html lang="pt-br" >
 <head>
   <meta charset="UTF-8">
-  <title>Upload de Imagem</title>
+  <title>PhotoLizer - Upload</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <style>
-      @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+    @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 		@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500);
+		@import url('https://fonts.googleapis.com/css?family=Anton');
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
 		@-webkit-keyframes roll {
 		0% {
 			opacity: 0;
@@ -249,10 +252,10 @@ if(isset($_POST["base"])){
 			bottom: 10%;
 		}
 		header {
-			position:absolute; 
-			top:10%; 
-			left:0px; 
-			height:200px; 
+			position:absolute;
+			top:10%;
+			left:0px;
+			height:200px;
 			right:0px;overflow:hidden;
 		}
 		h1{
@@ -260,12 +263,62 @@ if(isset($_POST["base"])){
 			font-size:30px;
 			text-align: center;
 		}
+
+		.span-logo {
+			padding-left: 10px;
+		}
+
+		.img-logo {
+			font-family: 'Anton', Arial, sans-serif;
+			font-size: 30px;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			color: #fff;
+			padding-top: 20px;
+		}
+
+		.navbar span {
+			color: #FFFFFF;
+		}
+
+		.texto-upload {
+			font-family: 'Roboto', Arial, sans-serif;
+			text-align: center;
+			color: #ffffff;
+			padding-top: 20px;
+			font-size: 25px;
+		}
+
+		.botao-enviar {
+			font-family: 'Roboto', Arial, sans-serif;
+			margin-left: 20px;
+		}
+
+		.botao-enviar-centro {
+			text-align: center;
+		}
+
     </style>
+
 </head>
 <body translate="no" onload="start();">
-	<header>
-		<h1>Upload de Imagem</h1>
-	</header>
+<header>
+	<h2 class="texto-upload">Faça o upload da imagem!</h2>
+</header>
+
+	<div class="container">
+
+		<div class="navbar-header">
+
+			<a href="index.php" class="navbar-brand">
+				<span class="img-logo">PHOTOLIZER<span class="span-logo glyphicon glyphicon-eye-open"</span></span>
+			</a>
+
+		</div>
+
+</div>
+
   <div class="wrapper">
   <button class="no-image" id="img-result">Upload Image</button>
   </div>
@@ -273,13 +326,13 @@ if(isset($_POST["base"])){
       (function () {
 			var uploader = document.createElement('input'),
 				image = document.getElementById('img-result');
-				
+
 			uploader.type = 'file';
 			uploader.accept = 'image/*';
 
 			image.onclick = function() {
 				uploader.click();
-				
+
 			}
 			uploader.onchange = function() {
 				var reader = new FileReader();
@@ -302,20 +355,21 @@ if(isset($_POST["base"])){
 				}
 				reader.readAsDataURL(uploader.files[0]);
 			}
-			
+
 			document.querySelector('.hide-button').onclick = function () {
 				document.querySelector('.upload-result').style.display = 'none';
 			};
-			
+
 			document.querySelector('.show-button').onclick = function () {
 				document.querySelector('.playme').style.display = 'block';
 			};
 			})();
 	</script>
-	<footer>
+
+	<footer class="botao-enviar-centro">
 	<form action="#" method="post" enctype="multipart/form-data">
 		<input name="base64" type="hidden" id="base64">
-		<center><button type="submit" name="base" id="base" class="playme">ENVIAR IMAGEM</button></center>
+		<button type="submit" name="base" id="base" class="playme botao-enviar">ENVIAR IMAGEM</button>
 	</form>
 	</footer>
 </body>

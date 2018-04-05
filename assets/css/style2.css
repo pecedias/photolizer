@@ -56,7 +56,7 @@ nav.navbar-bg {
 }
 
 #elementos1 .container {
-	background: #ffffff;
+	background: #FFFFFF;
 }
 
 #elementos1 .img-centro {
@@ -255,10 +255,6 @@ a {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-#elementos1 .img-centro {
-	height: 300px;
 }
 
 #elementos3 h2 {

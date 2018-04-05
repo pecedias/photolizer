@@ -1,4 +1,5 @@
 <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
   body {
   background-color: #222;
 }
@@ -16,13 +17,12 @@
   display: block;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 49%;
   color: #999;
   width: 100px;
   height: 30px;
   margin: -7px 0 0 -105px;
-  text-align: center;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 35px;
 }
 
