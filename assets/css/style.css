@@ -5,7 +5,6 @@
 */
 
 /* ========================= LAYOUT ========================= */
-@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Anton');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
@@ -44,6 +43,8 @@ nav.navbar-bg {
 	margin: 0px 0px 1px 0px;
 	background: rgba(0, 0, 0, 0.8);
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 	border: none;
 }
 
@@ -65,9 +66,12 @@ nav.navbar-bg {
 	width: 700px;
   margin-left: auto;
 	margin-right: auto;
+	padding: 1px;
 	color: transparent;
-	border: 5px solid #fff;
-	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+	border: 2px dashed rgba(0, 0, 0, 0.5);
+	/*box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);*/
 
 }
 
@@ -96,22 +100,30 @@ nav.navbar-bg {
 	border-radius: 5px 5px;
 }
 
-/* #elementos2 i.far {
-	font-size: 18px;
-	padding-left: 10px;
-} */
-
 #elementos3 .container {
 	background: #FFFFFF;
 }
 
 #elementos3 h2 {
-	padding-left: 40px;
+	font-size: 25px;
+	padding-left: 30px;
 	padding-bottom: 5px;
 }
 
 #elementos3 .no-image {
-	padding-left: 45px;
+	padding-left: 15px;
+}
+
+#elementos3 .img-borda {
+	padding: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.espaco-bottom {
+	padding-bottom: 28px;
 }
 
 .borda-direita {
@@ -126,12 +138,15 @@ nav.navbar-bg {
 	margin-top: -14px;
 }
 
+.center {
+	text-align: center;
+}
+
 a {
 	text-transform: capitalize;
 }
 
 #rodape {
-	margin-top: 20px;
 	padding: 10px;
 	background: #258dc8; /* Old browsers */
 	background: -moz-linear-gradient(top, #258dc8 0%, #258dc8 100%); /* FF3.6-15 */
@@ -161,6 +176,15 @@ a {
 	padding-top: 4px;
 }
 
+.center-responsive {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#elementos3 h2 {
+	text-align: center;
+	padding-left: 10px;
 }
 
 /* sm ≥ 768px */
@@ -171,11 +195,9 @@ a {
 /* md ≥ 992px */
 @media screen and (min-width: 992px) {
 
-
 }
 
 /* lg ≥ 1200px */
 @media screen and (min-width: 1200px) {
-
 
 }

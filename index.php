@@ -74,7 +74,7 @@ $id = $_GET['id'];
         <div class="row">
 
          <div class="col-md-2">
-              <ul class="nav collapse navbar-collapse" align="center">
+              <ul class="nav center" align="center">
                 <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
                 <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
                 <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
@@ -90,7 +90,7 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-              <ul class="nav" align="center">
+              <ul class="nav center" align="center">
                 <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
                 <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
                 <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
@@ -110,15 +110,15 @@ $id = $_GET['id'];
 
           <div class="col-md-2">
             <h2 align="center">Rosto <i class="far fa-smile"></i></h2>
-              <ul class="nav borda-esquerda borda-direita" align="center">
+              <ul class="nav borda-esquerda borda-direita center" align="center">
                 <?php
                   if($faceC->rowCount() > 0) {
                     foreach ($faces as $face) {
                       echo "<li><a href=\"#\">".$face['face_name']."</a></li>";
                     }
                   } else {
-                    echo "<ul class=\"nav\" align=\"center\">
-                            <li><a href=\"#\">Nada relacionado a rosto. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                    echo "<ul class=\"nav\">
+                            <li data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Nada relacionado a rosto encontrado.\"><a href=\"#\"><i class=\"fas fa-info\"></i></a></li>
                           </ul>";
                   }
                 ?>
@@ -127,7 +127,7 @@ $id = $_GET['id'];
 
           <div class="col-md-2">
             <h2 align="center">Logos <i class="far fa-lightbulb"></i></h2>
-              <ul class="nav borda-esquerda borda-direita" align="center">
+              <ul class="nav borda-esquerda borda-direita center" align="center">
                 <?php
                   if($logoC->rowCount() > 0) {
                     foreach ($logos as $logo) {
@@ -135,7 +135,7 @@ $id = $_GET['id'];
                     }
                   } else {
                     echo "<ul class=\"nav\" align=\"center\">
-                            <li><a href=\"#\">Nada relacionado a logos. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                            <li data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Nada relacionado a logos encontrado.\"><a href=\"#\"> <i class=\"fas fa-info\"></i></a></li>
                           </ul>";
                   }
                 ?>
@@ -144,15 +144,15 @@ $id = $_GET['id'];
 
           <div class="col-md-2">
             <h2 align="center">Cores <i class="fa fa-tint"></i></h2>
-              <ul class="nav borda-esquerda borda-direita nav-custom" align="center">
+              <ul class="nav borda-esquerda borda-direita nav-custom center" align="center">
                 <?php
                   if($propertC->rowCount() > 0) {
                     foreach ($properties as $propert) {
-                      echo "<li class=\"espaco\" data-toggle=\"tooltip\" data-placement=\"right\" title=".$propert['cod_color']."><a style=\"color: " .$propert['cod_color']."; font-size: 30px;\" href=\"#\">&#9632;&#9632;&#9632;&#9632;&#9632;</a></li>";
+                      echo "<li class=\"espaco\" data-toggle=\"tooltip\" data-placement=\"right\" title=".$propert['cod_color']."><a style=\"color: ".$propert['cod_color']."; font-size: 30px;\" href=\"#\">&#9632;&#9632;&#9632;&#9632;&#9632;</a></li>";
                     }
                   } else {
                     echo "<ul class=\"nav\" align=\"center\">
-                            <li><a href=\"#\">Nada relacionado a cores. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                            <li data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Nada relacionado a cores encontrado.\"><a href=\"#\"><i class=\"fas fa-info\"></i></a></li>
                           </ul>";
                   }
                 ?>
@@ -161,7 +161,7 @@ $id = $_GET['id'];
 
           <div class="col-md-2">
             <h2 align="center">Texto <i class="fas fa-font"></i></h2>
-              <ul class="nav borda-esquerda borda-direita" align="center">
+              <ul class="nav borda-esquerda borda-direita center" align="center">
                 <?php
                   if($textC->rowCount() > 0) {
                     foreach ($texts as $text) {
@@ -169,7 +169,7 @@ $id = $_GET['id'];
                     }
                   } else {
                     echo "<ul class=\"nav\" align=\"center\">
-                            <li><a href=\"#\">Nada relacionado a texto. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                            <li data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Nada relacionado a texto encontrado.\"><a href=\"#\"><i class=\"fas fa-info\"></i></a></li>
                           </ul>";
                   }
                 ?>
@@ -178,7 +178,7 @@ $id = $_GET['id'];
 
           <div class="col-md-2">
             <h2 align="center">Turismo <i class="fas fa-globe"></i></h2>
-              <ul class="nav borda-esquerda borda-direita" align="center">
+              <ul class="nav borda-esquerda borda-direita center" align="center">
                 <?php
                   if($landmarkC->rowCount() > 0) {
                     foreach ($landmarks as $landmark) {
@@ -186,7 +186,7 @@ $id = $_GET['id'];
                     }
                   } else {
                     echo "<ul class=\"nav\" align=\"center\">
-                            <li><a href=\"#\">Nada relacionado a turismo. </br> <span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                            <li data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Nada relacionado a turismo encontrado.\"><a href=\"#\"><i class=\"fas fa-info\"></i></a></li>
                           </ul>";
                   }
                 ?>
@@ -195,7 +195,7 @@ $id = $_GET['id'];
 
           <div class="col-md-2">
             <h2 align="center">Tags <i class="fas fa-tags"></i></h2>
-              <ul class="nav borda-esquerda borda-direita" align="center">
+              <ul class="nav borda-esquerda borda-direita center" align="center">
                 <?php
                   if($tagC->rowCount() > 0) {
                     foreach ($tags as $tag) {
@@ -203,7 +203,7 @@ $id = $_GET['id'];
                     }
                   } else {
                     echo "<ul class=\"nav\" align=\"center\">
-                            <li><a href=\"#\">Nada relacionado a tags. <span class=\"glyphicon glyphicon-remove\"</span></a></li>
+                            <li data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Nada relacionado a tags encontrado.\"><a href=\"#\"><i class=\"fas fa-info\"></i></a></li>
                           </ul>";
                   }
                 ?>
@@ -222,13 +222,13 @@ $id = $_GET['id'];
           <?php
             if($matchingC->rowCount() > 0) {
               foreach ($matchings as $matching) {
-              echo "<div class=\"col-md-3\">
-                  <img src=\"".$matching['matching_url']."\"width=\"260px;\" class=\"img-responsive-similar\"/>
+              echo "<div class=\"col-md-3 espaco-bottom\">
+                  <img src=\"".$matching['matching_url']."\"width=\"260px;\" class=\"img-responsive-similar center-responsive img-borda\"/>
                 </div>";
               }
             } else {
-              echo "<div class=\"col-md-3 no-image\">
-                  <img src=\"assets/img/no-image.jpg\"width=\"260px;\" class=\"img-responsive-similar\"/>
+              echo "<div class=\"col-md-3 no-image espaco-bottom\">
+                  <img src=\"assets/img/no-image.jpg\"width=\"260px;\" class=\"img-responsive-similar center-responsive\"/>
                 </div>";
             }
           ?>
