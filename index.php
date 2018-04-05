@@ -241,14 +241,14 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-            <h4>Full-stack</h4>
+            <h4>Auth</h4>
             <ul class="nav">
               <li><a href="https://github.com/saulonunes" target="_blank">Saulo Nunes</a></li>
             </ul>
           </div>
 
           <div class="col-md-2">
-            <h4>Banco de dados</h4>
+            <h4>Database</h4>
             <ul class="nav">
               <li><a href="https://github.com/jhonnyulisilva" target="_blank">Jhonny Ulisses</a></li>
             </ul>
