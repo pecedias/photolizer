@@ -1,13 +1,12 @@
 <?php
-if(!isset($_GET['id'])){
-    echo '<script type="text/javascript">
-          			  window.location = "https://ads.deskbr.com/upload/"
-     				 </script>';
-}
+header("Refresh: 10;");
+if(isset($_GET['hash']) == '17C4CC1CE8032471AB6C14A6CBB85D133BB064A2B0D6620E9E591C5EFC94248C'){
 require_once('config.php');
-$id = $_GET['id'];
-    $id = base64_decode($id);
-    $imageC = $conn->query("SELECT * FROM image WHERE id_image = '".$id."'");
+ $idC = $conn->query("SELECT id_image FROM image WHERE list = 1 AND safe != 'yes'  AND active = 1 LIMIT 1");
+ $idC->execute();
+ $result = $idC->fetch();
+ $id = $result['id_image'];
+    $imageC = $conn->query("SELECT * FROM image WHERE id_image = '".$id."' AND active = 1");
     $image = $imageC->fetch(PDO::FETCH_ASSOC);
     $imageName = $image['image_name'];
     $tagC = $conn->query("SELECT DISTINCT * FROM label WHERE fk_id_image = '".$id."' LIMIT 5");
@@ -24,6 +23,13 @@ $id = $_GET['id'];
     $matchings = $matchingC->fetchAll();
     $faceC = $conn->query("SELECT DISTINCT * FROM face WHERE fk_id_image = '".$id."' and level = 'VERY_LIKELY' LIMIT 5");
     $faces = $faceC->fetchAll();
+    $listA = $conn->query("SELECT * FROM image WHERE list = 1 AND safe <> 'yes'  AND active = 1 LIMIT 5");
+    $listsA = $listA->fetchAll();
+    $listB = $conn->query("SELECT * FROM image WHERE list = 1 AND safe <> 'yes'  AND active = 1 LIMIT 5 OFFSET 5");
+    $listsB = $listB->fetchAll();
+    //Registra que a imagem já foi processada.
+    $sql = "UPDATE image SET list = '2' WHERE id_image = '".$id."'";
+    $conn->exec($sql);
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +49,21 @@ $id = $_GET['id'];
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/custom2.css" rel="stylesheet">
     <link href="<?php echo "https://" . $_SERVER['HTTP_HOST']; ?>/assets/css/style2.css" rel="stylesheet">
-
+    <style>
+      .numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    background: #fff;
+    border: 2px solid black;
+    color: black;
+    text-align: center;
+    font: 21px Arial, sans-serif;
+    display: inline-block;
+    }
+    </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,27 +96,41 @@ $id = $_GET['id'];
 
          <div class="col-md-2">
               <ul class="nav center" align="center">
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                <?php
+                if($listA->rowCount() > 0) {
+                    $i = 1;
+                    foreach ($listsA as $list) {
+                      echo "<li><a href=\"#\">".$list['image_name']."<br><div class=\"numberCircle\">".$i."</div></a></li>";
+                        $i++;
+                    }
+                  }
+                ?>
               </ul>
           </div>
 
           <div class="col-md-8">
             <a href="#">
-              <img src='upload/files_input/<?php echo $imageName;?>' class="img-responsive img-centro"/>
+              <?php
+                if($id != null){
+                  echo "<img src='upload/files_input/".$imageName."' class=\"img-responsive img-centro\"/>";
+                }else{
+                  echo "<img src='assets/img/sem-imagem-meio.png' class=\"img-responsive img-centro\"/>";
+                }
+              ?>
             </a>
           </div>
 
           <div class="col-md-2">
               <ul class="nav center" align="center">
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
-                <li><a href="#">List item <span class="glyphicon glyphicon-arrow-up item"</span></a></li>
+                 <?php
+                if($listB->rowCount() > 0) {
+                    $i = 6;
+                    foreach ($listsB as $list) {
+                      echo "<li><a href=\"#\">".$list['image_name']."<br><div class=\"numberCircle\">".$i."</div></a></li>";
+                        $i++;
+                    }
+                  }
+                ?>
               </ul>
           </div>
 
@@ -261,14 +295,14 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-            <h4>Full-stack</h4>
+            <h4>Auth</h4>
             <ul class="nav">
               <li><a href="https://github.com/saulonunes" target="_blank">Saulo Nunes</a></li>
             </ul>
           </div>
 
           <div class="col-md-2">
-            <h4>Banco de dados</h4>
+            <h4>Database</h4>
             <ul class="nav">
               <li><a href="https://github.com/jhonnyulisilva" target="_blank">Jhonny Ulisses</a></li>
             </ul>
@@ -306,3 +340,7 @@ $id = $_GET['id'];
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
+<?php
+}else{
+echo "hash invalida";
+}

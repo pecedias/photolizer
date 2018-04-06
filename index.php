@@ -146,7 +146,7 @@ $id = $_GET['id'];
                 <?php
                   if($textC->rowCount() > 0) {
                     foreach ($texts as $text) {
-                      echo "<li><a href=\"#\">".$text['text']."</a></li>";
+                      echo "<li><a href=\"#\">".trim(preg_replace('/\s\s+/', '',substr($text['text'],0,20)))."</a></li>";
                     }
                   } else {
                     echo "<ul class=\"nav\" align=\"center\">
@@ -248,7 +248,7 @@ $id = $_GET['id'];
           </div>
 
           <div class="col-md-2">
-            <h4>Database</h4>
+            <h4>DataBase</h4>
             <ul class="nav">
               <li><a href="https://github.com/jhonnyulisilva" target="_blank">Jhonny Ulisses</a></li>
             </ul>
