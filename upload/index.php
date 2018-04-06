@@ -311,7 +311,7 @@ if(isset($_POST["base"])){
 
 		<div class="navbar-header">
 
-			<a href="index.php" class="navbar-brand">
+			<a href="https://ads.deskbr.com" class="navbar-brand">
 				<span class="img-logo">PHOTOLIZER<span class="span-logo glyphicon glyphicon-eye-open"</span></span>
 			</a>
 

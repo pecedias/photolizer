@@ -1,7 +1,7 @@
 <?php
 if(!isset($_GET['id'])){
     echo '<script type="text/javascript">
-          			  window.location = "https://ads.deskbr.com/upload/"
+          			  window.location = "https://ads.deskbr.com/login/"
      				 </script>';
 }
 require_once('config.php');
