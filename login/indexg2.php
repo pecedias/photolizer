@@ -81,3 +81,6 @@
   <script>startApp();</script>
 </body>
 </html>
+
+   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="370" data-height="50" data-longtitle="true" data-lang="pt-BR"></div>
+  <a href="">Entrar com o Facebook</a>

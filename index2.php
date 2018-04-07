@@ -100,7 +100,7 @@ require_once('config.php');
                 if($listA->rowCount() > 0) {
                     $i = 1;
                     foreach ($listsA as $list) {
-                      echo "<li><a href=\"#\">".$list['image_name']."<br><div class=\"numberCircle\">".$i."</div></a></li>";
+                      echo "<li><a href=\"#\">".$list['nome']."<br><div class=\"numberCircle\">".$i."</div></a></li>";
                         $i++;
                     }
                   }
@@ -126,7 +126,7 @@ require_once('config.php');
                 if($listB->rowCount() > 0) {
                     $i = 6;
                     foreach ($listsB as $list) {
-                      echo "<li><a href=\"#\">".$list['image_name']."<br><div class=\"numberCircle\">".$i."</div></a></li>";
+                      echo "<li><a href=\"#\">".$list['nome']."<br><div class=\"numberCircle\">".$i."</div></a></li>";
                         $i++;
                     }
                   }

@@ -29,7 +29,6 @@ $image = $vision->image(fopen($fileName, 'r'), [
 $result = $vision->annotate($image);
 //Faces
 //print("<br><b>Faces:</b>\n");
-if(isset($result->info()['faceAnnotations'] )){
 
 foreach ($result->info()['faceAnnotations'] as $annotation) {
     //Insere dados
@@ -71,8 +70,7 @@ foreach ($result->info()['faceAnnotations'] as $annotation) {
         $y2 = isset($verticies[2]['y']) ? $verticies[2]['y'] : 0;
       	//$image->rectangle($x1, $y1, $x2, $y2, array(0, 0, 0), 0.5);  
 				//$image->show();
-			$ext = explode('.',$img);
-			$ext = $img[1];
+			$ext = pathinfo($outputImage, PATHINFO_EXTENSION);
 			if($ext == 'jpeg' || $ext == 'jpg'){
 				$dest = imagecreatefromjpeg($outputImage);
 				imagerectangle($dest, $x1, $y1, $x2, $y2, 0x00ff00);
@@ -87,7 +85,7 @@ foreach ($result->info()['faceAnnotations'] as $annotation) {
 				imagegif($dest, $outputImage); 
 			}
 		}
-		}
+
 }
 //echo '<img src="'.$outputImage.'">';
 //print("<br><b>Tags:</b>\n");

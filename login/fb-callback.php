@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../config.php';
 require_once 'facebook/vendor/autoload.php';
 $fb = new Facebook\Facebook([
     'app_id' => '1634965423265207', // Replace {app-id} with your app id

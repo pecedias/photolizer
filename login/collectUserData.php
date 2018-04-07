@@ -4,6 +4,8 @@ session_start();
 /******Improting Facebook API Files**************/
 require_once 'src/Facebook/autoload.php';
 require_once 'credentials.php';
+require_once 'token.php';
+require_once 'sqlFunctions.php';
 $fb = new Facebook\Facebook([
   'app_id' => $appid,
   'app_secret' => $appsecret,
@@ -48,28 +50,13 @@ $dp=$userNodeDp->getProperty('url');
 $referal='facebook';
 /******Storing User Data In Databases (SQL)**************/
 require 'credentials.php';
-$connection = mysql_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD) or die( "Unable to connect");
-$database = mysql_select_db($DB_DATABASE) or die( "Unable to select database");
 
 /******Adding Users To The Database And Updating Their Info If They Are Already Registered**************/
 
-function checkAndAddUser($Fuid,$fname,$lname,$gender,$email,$fullname,$fblink,$dp,$referal){
-    $check = mysql_query("select * from users where email='$email'");
-  $check = mysql_num_rows($check);
-  if (empty($check)) { // if new user . Insert a new record   
-  $query = "INSERT INTO users (Fuid,fname,lname,email,fullname,fblink,gender,dp,lastlogin,referal) VALUES ('$Fuid','$fname','$lname','$email','$fullname','$fblink','$gender','$dp',now(),'$referal')";
-  mysql_query($query);  
-  $_SESSION['user_check']=$email;
-  } else {   // If Returned user . update the user record 
-  $_SESSION['user_check']=$email;
-  $query = "UPDATE Users SET  lastlogin=now() WHERE email='$email' ";
-  mysql_query($query);
-  }
-}
-checkAndAddUser($Fuid,$fname,$lname,$gender,$email,$fullname,$fblink,$dp,$referal);
 //echo $_SESSION['user_check'];
 
 
+var_dump($userNode);
 /**************Storing Data In Sessions******************/
 $_SESSION['Fuid']=$userNode->getProperty('id');
 $_SESSION['fname']=$userNode->getProperty('first_name');
@@ -82,6 +69,6 @@ $_SESSION['referal']='facebook';
 
 
 /*********Redirecting To User Profile Page************/
-header('location: profile.php');
+header('location: ../login/');
 ?>
 

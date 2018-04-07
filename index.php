@@ -1,4 +1,8 @@
 <?php
+session_start();
+					if(!isset($_SESSION['Fuid'])){
+						header('location: ../login/');
+					}
 if(!isset($_GET['id'])){
     echo '<script type="text/javascript">
           			  window.location = "https://ads.deskbr.com/login/"

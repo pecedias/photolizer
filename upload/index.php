@@ -1,4 +1,8 @@
 <?php
+session_start();
+					if(!isset($_SESSION['Fuid'])){
+						header('location: ../login/');
+					}
 require_once('../config.php');
 require_once('Compress.php');
 // Check if image file is a actual image or fake image
@@ -53,7 +57,7 @@ if(isset($_POST["base"])){
 				//var_dump($image_compress);
 				$id = new_id();
 				$datetime = date("Y-m-d H:i:s");
-				$sql = "INSERT INTO image (id_image,image_name) VALUES (".$id.",'".$target_name."')";
+				$sql = "INSERT INTO image (id_image,image_name,id_user,nome) VALUES (".$id.",'".$target_name."','".$_SESSION['Fuid']."','".$_SESSION['fullname']."')";
 				$conn->exec($sql);
 				$url = 'https://ads.deskbr.com/api/detection.php?id='.base64_encode($id).'&img='.base64_encode($target_name);
 				echo '<script type="text/javascript">
@@ -304,14 +308,14 @@ if(isset($_POST["base"])){
 </head>
 <body translate="no" onload="start();">
 <header>
-	<h2 class="texto-upload">Faça o upload da imagem!</h2>
+	<h2 class="texto-upload">Olá <?php echo $_SESSION['fullname']; ?>, faça o upload da imagem!</h2>
 </header>
 
 	<div class="container">
 
 		<div class="navbar-header">
 
-			<a href="https://ads.deskbr.com" class="navbar-brand">
+			<a href="index.php" class="navbar-brand">
 				<span class="img-logo">PHOTOLIZER<span class="span-logo glyphicon glyphicon-eye-open"</span></span>
 			</a>
 

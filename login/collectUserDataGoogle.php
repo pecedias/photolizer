@@ -49,5 +49,5 @@
 
 
 		/*********Redirecting To User Profile Page************/
-		header('location: profile.php');
+		header('location: ../upload/');
 ?>
