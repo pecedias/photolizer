@@ -1,6 +1,5 @@
 
 .ftpconfig
-
 config.php
 index2bkp.php
 deployment-config.json
