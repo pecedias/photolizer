@@ -1,9 +1,0 @@
-{
-    "type": "sftp",
-    "host": "ads.deskbr.com",
-    "username": "root",
-    "password": "Moc@3025",
-    "port": 22,
-    "remotePath": "/var/www/ads/html/",
-    "uploadOnSave": true
-} 
