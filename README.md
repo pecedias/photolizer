@@ -7,7 +7,7 @@ PhotoLizer é um trabalho de Faculdade com a função de identificar objetos, te
 
 [Victor Cezario](https://github.com/victorcezario)
 
-[Jhonny Ulisses](https://github.com/jhonnyulisses)
+[Jhonny Ulisses](https://github.com/jhonnyulisilvas)
 
 [Saulo Nunes](https://github.com/SauloNunes)
 
